@@ -6,6 +6,7 @@ Public Class ProbationCenter
     Private _Constr As String
     Private _YouthID As Integer
     Private _CaseID As Integer
+    Private _UserTypeId As Integer
     Private _AdvID As Integer = -1
 
     Public Sub New()
@@ -55,7 +56,7 @@ Public Class ProbationCenter
                     Next
                 End If
 
-                'LoadActivity(_YouthID, _CaseID)
+                LoadActivity(_YouthID, _CaseID)
                 'GetDetailByID(_YouthID, _CaseID)
                 'btSubmit.Enabled = True
             End If
@@ -76,6 +77,34 @@ Public Class ProbationCenter
         End If
     End Sub
 
+    Private Sub LoadActivity(ByVal YouthID As Integer, ByVal CaseID As Integer)
+        Dim advCenter = New AdvCenter(_Constr)
+        Dim ds = New DataSet
+        ds = advCenter.ListActivity(YouthID, CaseID, _UserTypeId)
+
+        If Not ds Is Nothing Then
+            Dim ci = CultureInfo.CreateSpecificCulture("th-TH")
+            If ds.Tables(0).Rows.Count > 0 Then
+                For Each row0 As DataRow In ds.Tables(0).Rows
+                    Dim actName = row0("actname").ToString
+                    Dim location = row0("location").ToString
+                    Dim actDate = CDate(row0("actDate")).ToString("dd MMMM yyyy", ci)
+                    Dim deptName = row0("deptname").ToString
+
+                    dgvAct0.Rows.Add(dgvAct0.Rows.Count + 1, actName, location, actDate, deptName)
+                Next
+            End If
+
+            If ds.Tables(1).Rows.Count > 0 Then
+                For Each row1 As DataRow In ds.Tables(1).Rows
+                    Dim location = row1("location").ToString
+                    Dim actDate = CDate(row1("actDate")).ToString("dd MMMM yyyy", ci)
+                    Dim deptName = row1("name").ToString
+                    dgvAct1.Rows.Add(dgvAct1.Rows.Count + 1, location, actDate, deptName)
+                Next
+            End If
+        End If
+    End Sub
 #End Region
 
 End Class

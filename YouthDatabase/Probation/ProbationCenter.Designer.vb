@@ -61,6 +61,8 @@ Partial Class ProbationCenter
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.mtbCAPhone = New System.Windows.Forms.MaskedTextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.btAddYouth = New System.Windows.Forms.Button()
         Me.tbRedNo = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -82,8 +84,6 @@ Partial Class ProbationCenter
         Me.Label17 = New System.Windows.Forms.Label()
         Me.tbFullname = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.mtbCAPhone = New System.Windows.Forms.MaskedTextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
@@ -195,9 +195,9 @@ Partial Class ProbationCenter
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox5.Controls.Add(Me.dgvAct1)
         Me.GroupBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox5.Location = New System.Drawing.Point(694, 379)
+        Me.GroupBox5.Location = New System.Drawing.Point(694, 412)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(483, 142)
+        Me.GroupBox5.Size = New System.Drawing.Size(483, 109)
         Me.GroupBox5.TabIndex = 4
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "การส่งต่อทางจิดสังคมและจิตเวช"
@@ -212,10 +212,10 @@ Partial Class ProbationCenter
         Me.dgvAct1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
         Me.dgvAct1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvAct1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5})
-        Me.dgvAct1.Location = New System.Drawing.Point(6, 22)
+        Me.dgvAct1.Location = New System.Drawing.Point(7, 19)
         Me.dgvAct1.Name = "dgvAct1"
         Me.dgvAct1.ReadOnly = True
-        Me.dgvAct1.Size = New System.Drawing.Size(471, 114)
+        Me.dgvAct1.Size = New System.Drawing.Size(471, 82)
         Me.dgvAct1.TabIndex = 26
         '
         'DataGridViewTextBoxColumn2
@@ -255,7 +255,7 @@ Partial Class ProbationCenter
         Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox4.Location = New System.Drawing.Point(694, 242)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(483, 136)
+        Me.GroupBox4.Size = New System.Drawing.Size(483, 164)
         Me.GroupBox4.TabIndex = 3
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "การแก้ไขบำบัดฟื้นฟู"
@@ -273,7 +273,7 @@ Partial Class ProbationCenter
         Me.dgvAct0.Location = New System.Drawing.Point(7, 22)
         Me.dgvAct0.Name = "dgvAct0"
         Me.dgvAct0.ReadOnly = True
-        Me.dgvAct0.Size = New System.Drawing.Size(469, 108)
+        Me.dgvAct0.Size = New System.Drawing.Size(469, 136)
         Me.dgvAct0.TabIndex = 24
         '
         'DataGridViewTextBoxColumn1
@@ -504,6 +504,25 @@ Partial Class ProbationCenter
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "ข้อมูลทั่วไป"
         '
+        'mtbCAPhone
+        '
+        Me.mtbCAPhone.Location = New System.Drawing.Point(1044, 46)
+        Me.mtbCAPhone.Mask = "000-000-0000"
+        Me.mtbCAPhone.Name = "mtbCAPhone"
+        Me.mtbCAPhone.ReadOnly = True
+        Me.mtbCAPhone.Size = New System.Drawing.Size(90, 23)
+        Me.mtbCAPhone.TabIndex = 88
+        Me.mtbCAPhone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(928, 49)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(110, 17)
+        Me.Label9.TabIndex = 89
+        Me.Label9.Text = "เบอร์โทรศัพท์มือถือ"
+        '
         'btAddYouth
         '
         Me.btAddYouth.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -689,25 +708,6 @@ Partial Class ProbationCenter
         Me.Label1.Size = New System.Drawing.Size(114, 17)
         Me.Label1.TabIndex = 30
         Me.Label1.Text = "ชื่อ-นามสกุลเยาวชน"
-        '
-        'mtbCAPhone
-        '
-        Me.mtbCAPhone.Location = New System.Drawing.Point(1044, 46)
-        Me.mtbCAPhone.Mask = "000-000-0000"
-        Me.mtbCAPhone.Name = "mtbCAPhone"
-        Me.mtbCAPhone.ReadOnly = True
-        Me.mtbCAPhone.Size = New System.Drawing.Size(90, 23)
-        Me.mtbCAPhone.TabIndex = 88
-        Me.mtbCAPhone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(928, 49)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(110, 17)
-        Me.Label9.TabIndex = 89
-        Me.Label9.Text = "เบอร์โทรศัพท์มือถือ"
         '
         'ProbationCenter
         '
