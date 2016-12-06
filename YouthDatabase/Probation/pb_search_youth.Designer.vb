@@ -69,57 +69,64 @@ Partial Class pb_search_youth
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel1.Location = New System.Drawing.Point(5, 5)
+        Me.Panel1.Location = New System.Drawing.Point(8, 8)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(776, 369)
+        Me.Panel1.Size = New System.Drawing.Size(1164, 568)
         Me.Panel1.TabIndex = 2
         '
         'cbCaseType
         '
         Me.cbCaseType.FormattingEnabled = True
-        Me.cbCaseType.Location = New System.Drawing.Point(549, 37)
+        Me.cbCaseType.Location = New System.Drawing.Point(824, 57)
+        Me.cbCaseType.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.cbCaseType.Name = "cbCaseType"
-        Me.cbCaseType.Size = New System.Drawing.Size(135, 24)
+        Me.cbCaseType.Size = New System.Drawing.Size(200, 33)
         Me.cbCaseType.TabIndex = 28
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(480, 40)
+        Me.Label6.Location = New System.Drawing.Point(720, 62)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(65, 17)
+        Me.Label6.Size = New System.Drawing.Size(90, 25)
         Me.Label6.TabIndex = 27
         Me.Label6.Text = "ประเภทคดี"
         '
         'tbBlackNo
         '
-        Me.tbBlackNo.Location = New System.Drawing.Point(317, 37)
+        Me.tbBlackNo.Location = New System.Drawing.Point(476, 57)
+        Me.tbBlackNo.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbBlackNo.Name = "tbBlackNo"
-        Me.tbBlackNo.Size = New System.Drawing.Size(120, 23)
+        Me.tbBlackNo.Size = New System.Drawing.Size(178, 30)
         Me.tbBlackNo.TabIndex = 17
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(221, 40)
+        Me.Label5.Location = New System.Drawing.Point(350, 62)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(87, 17)
+        Me.Label5.Size = New System.Drawing.Size(118, 25)
         Me.Label5.TabIndex = 16
         Me.Label5.Text = "หมายเลขคดีดำ"
         '
         'tbCaseNo
         '
-        Me.tbCaseNo.Location = New System.Drawing.Point(90, 37)
+        Me.tbCaseNo.Location = New System.Drawing.Point(135, 57)
+        Me.tbCaseNo.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbCaseNo.Name = "tbCaseNo"
-        Me.tbCaseNo.Size = New System.Drawing.Size(120, 23)
+        Me.tbCaseNo.Size = New System.Drawing.Size(178, 30)
         Me.tbCaseNo.TabIndex = 15
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(11, 40)
+        Me.Label1.Location = New System.Drawing.Point(16, 62)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(73, 17)
+        Me.Label1.Size = New System.Drawing.Size(99, 25)
         Me.Label1.TabIndex = 14
         Me.Label1.Text = "หมายเลขคดี"
         '
@@ -134,10 +141,11 @@ Partial Class pb_search_youth
         Me.dgvYouth.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
         Me.dgvYouth.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvYouth.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.no, Me.fullname, Me.idcard, Me.case_id, Me.caseno, Me.blackno, Me.name})
-        Me.dgvYouth.Location = New System.Drawing.Point(9, 73)
+        Me.dgvYouth.Location = New System.Drawing.Point(14, 112)
+        Me.dgvYouth.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.dgvYouth.Name = "dgvYouth"
         Me.dgvYouth.ReadOnly = True
-        Me.dgvYouth.Size = New System.Drawing.Size(758, 283)
+        Me.dgvYouth.Size = New System.Drawing.Size(1137, 435)
         Me.dgvYouth.TabIndex = 13
         '
         'ID
@@ -156,7 +164,7 @@ Partial Class pb_search_youth
         Me.no.HeaderText = "ลำดับที่"
         Me.no.Name = "no"
         Me.no.ReadOnly = True
-        Me.no.Width = 65
+        Me.no.Width = 99
         '
         'fullname
         '
@@ -165,7 +173,7 @@ Partial Class pb_search_youth
         Me.fullname.HeaderText = "ชื่อ-นามสกุล"
         Me.fullname.Name = "fullname"
         Me.fullname.ReadOnly = True
-        Me.fullname.Width = 90
+        Me.fullname.Width = 135
         '
         'idcard
         '
@@ -174,7 +182,7 @@ Partial Class pb_search_youth
         Me.idcard.HeaderText = "รหัสบัตรประชาชน"
         Me.idcard.Name = "idcard"
         Me.idcard.ReadOnly = True
-        Me.idcard.Width = 120
+        Me.idcard.Width = 178
         '
         'case_id
         '
@@ -191,7 +199,7 @@ Partial Class pb_search_youth
         Me.caseno.HeaderText = "เลขคดี"
         Me.caseno.Name = "caseno"
         Me.caseno.ReadOnly = True
-        Me.caseno.Width = 63
+        Me.caseno.Width = 94
         '
         'blackno
         '
@@ -199,7 +207,7 @@ Partial Class pb_search_youth
         Me.blackno.HeaderText = "เลขคดีดำ"
         Me.blackno.Name = "blackno"
         Me.blackno.ReadOnly = True
-        Me.blackno.Width = 63
+        Me.blackno.Width = 113
         '
         'name
         '
@@ -207,71 +215,79 @@ Partial Class pb_search_youth
         Me.name.HeaderText = "ประเภทคดี"
         Me.name.Name = "name"
         Me.name.ReadOnly = True
-        Me.name.Width = 83
+        Me.name.Width = 126
         '
         'btSearch
         '
-        Me.btSearch.Location = New System.Drawing.Point(692, 8)
+        Me.btSearch.Location = New System.Drawing.Point(1038, 12)
+        Me.btSearch.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btSearch.Name = "btSearch"
-        Me.btSearch.Size = New System.Drawing.Size(75, 23)
+        Me.btSearch.Size = New System.Drawing.Size(112, 35)
         Me.btSearch.TabIndex = 12
         Me.btSearch.Text = "ค้นหา"
         Me.btSearch.UseVisualStyleBackColor = True
         '
         'tbIdcard
         '
-        Me.tbIdcard.Location = New System.Drawing.Point(549, 8)
+        Me.tbIdcard.Location = New System.Drawing.Point(824, 12)
+        Me.tbIdcard.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbIdcard.Name = "tbIdcard"
-        Me.tbIdcard.Size = New System.Drawing.Size(135, 23)
+        Me.tbIdcard.Size = New System.Drawing.Size(200, 30)
         Me.tbIdcard.TabIndex = 11
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(441, 11)
+        Me.Label4.Location = New System.Drawing.Point(673, 15)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(102, 17)
+        Me.Label4.Size = New System.Drawing.Size(137, 25)
         Me.Label4.TabIndex = 10
         Me.Label4.Text = "เลขบัตรประชาชน"
         '
         'tbLastname
         '
-        Me.tbLastname.Location = New System.Drawing.Point(317, 8)
+        Me.tbLastname.Location = New System.Drawing.Point(476, 12)
+        Me.tbLastname.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbLastname.Name = "tbLastname"
-        Me.tbLastname.Size = New System.Drawing.Size(120, 23)
+        Me.tbLastname.Size = New System.Drawing.Size(178, 30)
         Me.tbLastname.TabIndex = 8
         '
         'tbFirstname
         '
-        Me.tbFirstname.Location = New System.Drawing.Point(92, 8)
+        Me.tbFirstname.Location = New System.Drawing.Point(138, 12)
+        Me.tbFirstname.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbFirstname.Name = "tbFirstname"
-        Me.tbFirstname.Size = New System.Drawing.Size(120, 23)
+        Me.tbFirstname.Size = New System.Drawing.Size(178, 30)
         Me.tbFirstname.TabIndex = 7
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(264, 11)
+        Me.Label3.Location = New System.Drawing.Point(396, 17)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(53, 17)
+        Me.Label3.Size = New System.Drawing.Size(72, 25)
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "นามสกุล"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(63, 11)
+        Me.Label2.Location = New System.Drawing.Point(94, 17)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(23, 17)
+        Me.Label2.Size = New System.Drawing.Size(32, 25)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "ชื่อ"
         '
         'pb_search_youth
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(784, 462)
+        Me.ClientSize = New System.Drawing.Size(1176, 711)
         Me.Controls.Add(Me.Panel1)
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         'Me.name = "pb_search_youth"
         Me.Text = "ค้นหาเยาวชน"
         Me.Panel1.ResumeLayout(False)

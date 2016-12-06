@@ -180,6 +180,12 @@
     <Compile Include="Probation\ProbationCenter.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Probation\Rep2Pb.Designer.vb">
+      <DependentUpon>Rep2Pb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Probation\Rep2Pb.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Advice\actper_search_youth.resx">
@@ -229,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Probation\ProbationCenter.resx">
       <DependentUpon>ProbationCenter.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Probation\Rep2Pb.resx">
+      <DependentUpon>Rep2Pb.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
