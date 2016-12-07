@@ -76,6 +76,8 @@
     <Compile Include="Location.vb" />
     <Compile Include="Marriage.vb" />
     <Compile Include="Occupation.vb" />
+    <Compile Include="Probation.vb" />
+    <Compile Include="R2P.vb" />
     <Compile Include="Religion.vb" />
     <Compile Include="Sex.vb" />
     <Compile Include="Stay.vb" />
