@@ -63,9 +63,44 @@ Public Class Probation
         End Try
     End Sub
 
+    Public Function GetID(ByVal YouthID As Integer, ByVal CaseID As Integer) As Integer
+        Dim conn As SqlConnection = New SqlConnection(_Constr)
+        Dim command As SqlCommand = New SqlCommand()
+        Dim reader As SqlDataReader
+
+        Try
+            If conn.State = ConnectionState.Open Then conn.Close()
+            conn.Open()
+
+            command.Connection = conn
+            command.CommandType = CommandType.StoredProcedure
+            command.CommandText = "sp_Probation_GetID"
+            command.Parameters.Add("@YouthID", SqlDbType.Int).Value = YouthID
+            command.Parameters.Add("@CaseID", SqlDbType.Int).Value = CaseID
+
+            reader = command.ExecuteReader()
+
+            If reader.HasRows Then
+                reader.Read()
+
+                Return CInt(reader("id"))
+            Else
+                Return -1
+            End If
+
+        Catch ex As Exception
+            Return -1
+        Finally
+            conn.Close()
+            reader = Nothing
+            command = Nothing
+            conn = Nothing
+        End Try
+    End Function
+
     Public Function Insert(ByVal YouthID As Integer, ByVal CaseID As Integer, ByVal BlackNo As String, ByVal RedNo As String, ByVal ProbationRef As String,
                            ByVal ProbationCommandText As String, ByVal AssociateJudgeID As Integer, ByVal StartProbationDate As String, ByVal EndProbationDate As String,
-                           ByVal SummaryText As String, ByVal isTransfer As Integer, ByVal TransferDate As String, ByVal LMU As Integer) As Boolean
+                           ByVal SummaryText As String, ByVal isTransfer As Integer, ByVal TransferDate As String, ByVal LMU As Integer) As Integer
         Dim conn As SqlConnection = New SqlConnection(_Constr)
         Dim command As SqlCommand = New SqlCommand()
 
@@ -89,10 +124,16 @@ Public Class Probation
             command.Parameters.Add("@IsTransfer", SqlDbType.Int).Value = isTransfer
             command.Parameters.Add("@TransferDate", SqlDbType.Date).Value = CDate(TransferDate)
             command.Parameters.Add("@lmu", SqlDbType.Int).Value = LMU
+            command.Parameters.Add("@ID", SqlDbType.Int)
+            command.Parameters("@ID").Direction = ParameterDirection.Output
 
-            Return CBool(command.ExecuteNonQuery())
+            command.ExecuteNonQuery()
+
+            Dim val As String = command.Parameters("@ID").Value.ToString
+
+            Return CInt(val)
         Catch ex As Exception
-            Return False
+            Return -1
         Finally
             conn.Close()
             command = Nothing

@@ -63,7 +63,7 @@ Public Class R2P
             command.CommandType = CommandType.StoredProcedure
             command.CommandText = "sp_R2P_Insert"
             command.Parameters.Add("@ProbationID", SqlDbType.Int).Value = ProbationID
-            command.Parameters.Add("@EstDate", SqlDbType.Int).Value = EstimateDate
+            command.Parameters.Add("@EstDate", SqlDbType.Date).Value = CDate(EstimateDate)
             command.Parameters.Add("@lmu", SqlDbType.Int).Value = LMU
 
             Return CBool(command.ExecuteNonQuery())

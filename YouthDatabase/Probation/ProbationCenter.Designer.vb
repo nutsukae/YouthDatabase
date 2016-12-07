@@ -24,12 +24,12 @@ Partial Class ProbationCenter
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.btReset = New System.Windows.Forms.Button()
+        Me.btSubmit = New System.Windows.Forms.Button()
+        Me.dtpTransferDate = New System.Windows.Forms.DateTimePicker()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.cbTransfer = New System.Windows.Forms.CheckBox()
+        Me.tbSummaryText = New System.Windows.Forms.TextBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.dgvAct1 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -52,15 +52,15 @@ Partial Class ProbationCenter
         Me.LMU = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LabTest = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.tbRef = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.dtpEndDate = New System.Windows.Forms.DateTimePicker()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.dtpActDate = New System.Windows.Forms.DateTimePicker()
+        Me.dtpStartDate = New System.Windows.Forms.DateTimePicker()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.cbMainAssociateJudge = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.tbCommandText = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.mtbCAPhone = New System.Windows.Forms.MaskedTextBox()
@@ -121,12 +121,12 @@ Partial Class ProbationCenter
         Me.GroupBox6.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox6.Controls.Add(Me.Button2)
-        Me.GroupBox6.Controls.Add(Me.Button1)
-        Me.GroupBox6.Controls.Add(Me.DateTimePicker2)
+        Me.GroupBox6.Controls.Add(Me.btReset)
+        Me.GroupBox6.Controls.Add(Me.btSubmit)
+        Me.GroupBox6.Controls.Add(Me.dtpTransferDate)
         Me.GroupBox6.Controls.Add(Me.Label8)
-        Me.GroupBox6.Controls.Add(Me.CheckBox1)
-        Me.GroupBox6.Controls.Add(Me.TextBox3)
+        Me.GroupBox6.Controls.Add(Me.cbTransfer)
+        Me.GroupBox6.Controls.Add(Me.tbSummaryText)
         Me.GroupBox6.Location = New System.Drawing.Point(6, 782)
         Me.GroupBox6.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.GroupBox6.Name = "GroupBox6"
@@ -136,37 +136,37 @@ Partial Class ProbationCenter
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "ความคิดเห็นของผู้รับรายงานตัว"
         '
-        'Button2
+        'btReset
         '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button2.Location = New System.Drawing.Point(980, 174)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(146, 40)
-        Me.Button2.TabIndex = 41
-        Me.Button2.Text = "เริ่มใหม่"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btReset.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btReset.Location = New System.Drawing.Point(980, 174)
+        Me.btReset.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btReset.Name = "btReset"
+        Me.btReset.Size = New System.Drawing.Size(146, 40)
+        Me.btReset.TabIndex = 41
+        Me.btReset.Text = "เริ่มใหม่"
+        Me.btReset.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btSubmit
         '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button1.Location = New System.Drawing.Point(788, 174)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(146, 40)
-        Me.Button1.TabIndex = 40
-        Me.Button1.Text = "บันทึกข้อมูล"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btSubmit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btSubmit.Location = New System.Drawing.Point(788, 174)
+        Me.btSubmit.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.btSubmit.Name = "btSubmit"
+        Me.btSubmit.Size = New System.Drawing.Size(146, 40)
+        Me.btSubmit.TabIndex = 40
+        Me.btSubmit.Text = "บันทึกข้อมูล"
+        Me.btSubmit.UseVisualStyleBackColor = True
         '
-        'DateTimePicker2
+        'dtpTransferDate
         '
-        Me.DateTimePicker2.CustomFormat = "dd-MMM-yyyy"
-        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker2.Location = New System.Drawing.Point(374, 167)
-        Me.DateTimePicker2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(181, 30)
-        Me.DateTimePicker2.TabIndex = 38
+        Me.dtpTransferDate.CustomFormat = "dd-MMM-yyyy"
+        Me.dtpTransferDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtpTransferDate.Location = New System.Drawing.Point(374, 167)
+        Me.dtpTransferDate.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.dtpTransferDate.Name = "dtpTransferDate"
+        Me.dtpTransferDate.Size = New System.Drawing.Size(181, 30)
+        Me.dtpTransferDate.TabIndex = 38
         '
         'Label8
         '
@@ -178,27 +178,27 @@ Partial Class ProbationCenter
         Me.Label8.TabIndex = 39
         Me.Label8.Text = "วันที่ส่งตัว"
         '
-        'CheckBox1
+        'cbTransfer
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(27, 168)
-        Me.CheckBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(209, 29)
-        Me.CheckBox1.TabIndex = 35
-        Me.CheckBox1.Text = "ส่งไปรายงานตัวที่ศาลอื่น"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.cbTransfer.AutoSize = True
+        Me.cbTransfer.Location = New System.Drawing.Point(27, 168)
+        Me.cbTransfer.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.cbTransfer.Name = "cbTransfer"
+        Me.cbTransfer.Size = New System.Drawing.Size(209, 29)
+        Me.cbTransfer.TabIndex = 35
+        Me.cbTransfer.Text = "ส่งไปรายงานตัวที่ศาลอื่น"
+        Me.cbTransfer.UseVisualStyleBackColor = True
         '
-        'TextBox3
+        'tbSummaryText
         '
-        Me.TextBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.tbSummaryText.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox3.Location = New System.Drawing.Point(9, 34)
-        Me.TextBox3.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TextBox3.Multiline = True
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(1640, 110)
-        Me.TextBox3.TabIndex = 34
+        Me.tbSummaryText.Location = New System.Drawing.Point(9, 34)
+        Me.tbSummaryText.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.tbSummaryText.Multiline = True
+        Me.tbSummaryText.Name = "tbSummaryText"
+        Me.tbSummaryText.Size = New System.Drawing.Size(1640, 110)
+        Me.tbSummaryText.TabIndex = 34
         '
         'GroupBox5
         '
@@ -403,15 +403,15 @@ Partial Class ProbationCenter
         '
         Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox2.Controls.Add(Me.TextBox1)
+        Me.GroupBox2.Controls.Add(Me.tbRef)
         Me.GroupBox2.Controls.Add(Me.Label10)
-        Me.GroupBox2.Controls.Add(Me.DateTimePicker1)
+        Me.GroupBox2.Controls.Add(Me.dtpEndDate)
         Me.GroupBox2.Controls.Add(Me.Label16)
-        Me.GroupBox2.Controls.Add(Me.dtpActDate)
+        Me.GroupBox2.Controls.Add(Me.dtpStartDate)
         Me.GroupBox2.Controls.Add(Me.Label15)
         Me.GroupBox2.Controls.Add(Me.cbMainAssociateJudge)
         Me.GroupBox2.Controls.Add(Me.Label6)
-        Me.GroupBox2.Controls.Add(Me.TextBox2)
+        Me.GroupBox2.Controls.Add(Me.tbCommandText)
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Location = New System.Drawing.Point(6, 231)
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
@@ -422,12 +422,12 @@ Partial Class ProbationCenter
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "รายละเอียดการคุมประพฤติ"
         '
-        'TextBox1
+        'tbRef
         '
-        Me.TextBox1.Location = New System.Drawing.Point(801, 108)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(133, 30)
-        Me.TextBox1.TabIndex = 41
+        Me.tbRef.Location = New System.Drawing.Point(801, 108)
+        Me.tbRef.Name = "tbRef"
+        Me.tbRef.Size = New System.Drawing.Size(133, 30)
+        Me.tbRef.TabIndex = 41
         '
         'Label10
         '
@@ -439,15 +439,15 @@ Partial Class ProbationCenter
         Me.Label10.TabIndex = 40
         Me.Label10.Text = "เลขประจำตัวเด็กและเยาวชน"
         '
-        'DateTimePicker1
+        'dtpEndDate
         '
-        Me.DateTimePicker1.CustomFormat = "dd-MMM-yyyy"
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(1468, 106)
-        Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(181, 30)
-        Me.DateTimePicker1.TabIndex = 38
+        Me.dtpEndDate.CustomFormat = "dd-MMM-yyyy"
+        Me.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtpEndDate.Location = New System.Drawing.Point(1468, 106)
+        Me.dtpEndDate.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.dtpEndDate.Name = "dtpEndDate"
+        Me.dtpEndDate.Size = New System.Drawing.Size(181, 30)
+        Me.dtpEndDate.TabIndex = 38
         '
         'Label16
         '
@@ -459,15 +459,15 @@ Partial Class ProbationCenter
         Me.Label16.TabIndex = 39
         Me.Label16.Text = "วันพ้นคุมประพฤติ"
         '
-        'dtpActDate
+        'dtpStartDate
         '
-        Me.dtpActDate.CustomFormat = "dd-MMM-yyyy"
-        Me.dtpActDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpActDate.Location = New System.Drawing.Point(1068, 106)
-        Me.dtpActDate.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.dtpActDate.Name = "dtpActDate"
-        Me.dtpActDate.Size = New System.Drawing.Size(181, 30)
-        Me.dtpActDate.TabIndex = 36
+        Me.dtpStartDate.CustomFormat = "dd-MMM-yyyy"
+        Me.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtpStartDate.Location = New System.Drawing.Point(1068, 106)
+        Me.dtpStartDate.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.dtpStartDate.Name = "dtpStartDate"
+        Me.dtpStartDate.Size = New System.Drawing.Size(181, 30)
+        Me.dtpStartDate.TabIndex = 36
         '
         'Label15
         '
@@ -498,16 +498,16 @@ Partial Class ProbationCenter
         Me.Label6.TabIndex = 34
         Me.Label6.Text = "ผู้รับรายงานตัว"
         '
-        'TextBox2
+        'tbCommandText
         '
-        Me.TextBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.tbCommandText.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox2.Location = New System.Drawing.Point(219, 33)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TextBox2.Multiline = True
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(1430, 67)
-        Me.TextBox2.TabIndex = 33
+        Me.tbCommandText.Location = New System.Drawing.Point(219, 33)
+        Me.tbCommandText.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.tbCommandText.Multiline = True
+        Me.tbCommandText.Name = "tbCommandText"
+        Me.tbCommandText.Size = New System.Drawing.Size(1430, 67)
+        Me.tbCommandText.TabIndex = 33
         '
         'Label5
         '
@@ -833,13 +833,13 @@ Partial Class ProbationCenter
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents tbCommandText As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents cbMainAssociateJudge As ComboBox
-    Friend WithEvents dtpActDate As DateTimePicker
+    Friend WithEvents dtpStartDate As DateTimePicker
     Friend WithEvents Label15 As Label
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents dtpEndDate As DateTimePicker
     Friend WithEvents Label16 As Label
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents dgvReport As DataGridView
@@ -863,15 +863,15 @@ Partial Class ProbationCenter
     Friend WithEvents LMU As DataGridViewTextBoxColumn
     Friend WithEvents LabTest As DataGridViewTextBoxColumn
     Friend WithEvents GroupBox6 As GroupBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents DateTimePicker2 As DateTimePicker
+    Friend WithEvents tbSummaryText As TextBox
+    Friend WithEvents cbTransfer As CheckBox
+    Friend WithEvents dtpTransferDate As DateTimePicker
     Friend WithEvents Label8 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btSubmit As Button
+    Friend WithEvents btReset As Button
     Friend WithEvents btAddYouth As Button
     Friend WithEvents mtbCAPhone As MaskedTextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents tbRef As TextBox
 End Class
