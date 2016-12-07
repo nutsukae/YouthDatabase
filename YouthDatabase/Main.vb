@@ -77,4 +77,40 @@ Public Class Main
     Private Sub mnuExit_Click(sender As Object, e As EventArgs) Handles mnuExit.Click
         Application.Exit()
     End Sub
+
+#Region "Probation"
+    Private Sub mnuPBSummary_Click(sender As Object, e As EventArgs) Handles mnuPBSummary.Click
+        If ActiveMdiChild IsNot Nothing Then
+            ActiveMdiChild.Close()
+        End If
+
+        Dim frm = New ProbationCenter
+        frm.MdiParent = Me
+        frm.WindowState = FormWindowState.Maximized
+        frm.Show()
+    End Sub
+
+    Private Sub mnuPBAddActivity_Click(sender As Object, e As EventArgs) Handles mnuPBAddActivity.Click
+        If ActiveMdiChild IsNot Nothing Then
+            ActiveMdiChild.Close()
+        End If
+
+        Dim frm = New Act_Info
+        frm.MdiParent = Me
+        frm.WindowState = FormWindowState.Maximized
+        frm.Show()
+    End Sub
+
+    Private Sub mnuPBTreatment_Click(sender As Object, e As EventArgs) Handles mnuPBTreatment.Click
+        If ActiveMdiChild IsNot Nothing Then
+            ActiveMdiChild.Close()
+        End If
+
+        Dim frm = New Treatment_Info
+        frm.MdiParent = Me
+        frm.WindowState = FormWindowState.Maximized
+        frm.Show()
+    End Sub
+
+#End Region
 End Class
