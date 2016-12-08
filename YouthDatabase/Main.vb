@@ -112,5 +112,16 @@ Public Class Main
         frm.Show()
     End Sub
 
+    Private Sub mnuPBReport_Click(sender As Object, e As EventArgs) Handles mnuPBReport.Click
+        If ActiveMdiChild IsNot Nothing Then
+            ActiveMdiChild.Close()
+        End If
+
+        Dim frm = New Rep2Pb
+        frm.MdiParent = Me
+        frm.WindowState = FormWindowState.Maximized
+        frm.Show()
+    End Sub
+
 #End Region
 End Class

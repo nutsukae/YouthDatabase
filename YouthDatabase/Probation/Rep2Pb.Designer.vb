@@ -25,6 +25,7 @@ Partial Class Rep2Pb
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.cbHasNextTime = New System.Windows.Forms.CheckBox()
         Me.btReset = New System.Windows.Forms.Button()
         Me.btSubmit = New System.Windows.Forms.Button()
         Me.cbISUA = New System.Windows.Forms.CheckBox()
@@ -39,13 +40,13 @@ Partial Class Rep2Pb
         Me.tbEstDate = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgvReport = New System.Windows.Forms.DataGridView()
-        Me.btSearch = New System.Windows.Forms.Button()
-        Me.tbFullname = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.no = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.estdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.actdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btSearch = New System.Windows.Forms.Button()
+        Me.tbFullname = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvReport, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,15 +62,17 @@ Partial Class Rep2Pb
         Me.Panel1.Controls.Add(Me.tbFullname)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
-        Me.Panel1.Location = New System.Drawing.Point(3, 3)
+        Me.Panel1.Location = New System.Drawing.Point(2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1370, 537)
+        Me.Panel1.Size = New System.Drawing.Size(913, 349)
         Me.Panel1.TabIndex = 0
         '
         'GroupBox1
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.cbHasNextTime)
         Me.GroupBox1.Controls.Add(Me.btReset)
         Me.GroupBox1.Controls.Add(Me.btSubmit)
         Me.GroupBox1.Controls.Add(Me.cbISUA)
@@ -84,27 +87,41 @@ Partial Class Rep2Pb
         Me.GroupBox1.Controls.Add(Me.tbEstDate)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.dgvReport)
-        Me.GroupBox1.Location = New System.Drawing.Point(18, 57)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 37)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1336, 454)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
+        Me.GroupBox1.Size = New System.Drawing.Size(891, 295)
         Me.GroupBox1.TabIndex = 19
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "บันทึกผลการรายงานตัว"
         '
+        'cbHasNextTime
+        '
+        Me.cbHasNextTime.AutoSize = True
+        Me.cbHasNextTime.Location = New System.Drawing.Point(687, 190)
+        Me.cbHasNextTime.Name = "cbHasNextTime"
+        Me.cbHasNextTime.Size = New System.Drawing.Size(104, 21)
+        Me.cbHasNextTime.TabIndex = 47
+        Me.cbHasNextTime.Text = "มีนัดครั้งถัดไป"
+        Me.cbHasNextTime.UseVisualStyleBackColor = True
+        '
         'btReset
         '
-        Me.btReset.Location = New System.Drawing.Point(1094, 350)
+        Me.btReset.Location = New System.Drawing.Point(729, 256)
+        Me.btReset.Margin = New System.Windows.Forms.Padding(2)
         Me.btReset.Name = "btReset"
-        Me.btReset.Size = New System.Drawing.Size(102, 34)
+        Me.btReset.Size = New System.Drawing.Size(68, 27)
         Me.btReset.TabIndex = 46
         Me.btReset.Text = "ยกเลิก"
         Me.btReset.UseVisualStyleBackColor = True
         '
         'btSubmit
         '
-        Me.btSubmit.Location = New System.Drawing.Point(975, 350)
+        Me.btSubmit.Location = New System.Drawing.Point(650, 256)
+        Me.btSubmit.Margin = New System.Windows.Forms.Padding(2)
         Me.btSubmit.Name = "btSubmit"
-        Me.btSubmit.Size = New System.Drawing.Size(102, 34)
+        Me.btSubmit.Size = New System.Drawing.Size(68, 27)
         Me.btSubmit.TabIndex = 45
         Me.btSubmit.Text = "บันทึก"
         Me.btSubmit.UseVisualStyleBackColor = True
@@ -112,30 +129,30 @@ Partial Class Rep2Pb
         'cbISUA
         '
         Me.cbISUA.AutoSize = True
-        Me.cbISUA.Location = New System.Drawing.Point(1031, 231)
+        Me.cbISUA.Location = New System.Drawing.Point(687, 150)
+        Me.cbISUA.Margin = New System.Windows.Forms.Padding(2)
         Me.cbISUA.Name = "cbISUA"
-        Me.cbISUA.Size = New System.Drawing.Size(165, 29)
+        Me.cbISUA.Size = New System.Drawing.Size(126, 21)
         Me.cbISUA.TabIndex = 44
         Me.cbISUA.Text = "มีการตรวจปัสสาวะ"
         Me.cbISUA.UseVisualStyleBackColor = True
         '
         'cbNextDays
         '
+        Me.cbNextDays.Enabled = False
         Me.cbNextDays.FormattingEnabled = True
         Me.cbNextDays.Items.AddRange(New Object() {"30 วัน", "60 วัน", "90 วัน", "180 วัน"})
-        Me.cbNextDays.Location = New System.Drawing.Point(1031, 268)
-        Me.cbNextDays.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.cbNextDays.Location = New System.Drawing.Point(687, 217)
         Me.cbNextDays.Name = "cbNextDays"
-        Me.cbNextDays.Size = New System.Drawing.Size(110, 33)
+        Me.cbNextDays.Size = New System.Drawing.Size(75, 24)
         Me.cbNextDays.TabIndex = 43
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(909, 271)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Location = New System.Drawing.Point(604, 220)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(103, 25)
+        Me.Label4.Size = New System.Drawing.Size(77, 17)
         Me.Label4.TabIndex = 42
         Me.Label4.Text = "นัดครั้งถัดไป"
         '
@@ -143,38 +160,36 @@ Partial Class Rep2Pb
         '
         Me.tbRemark.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.tbRemark.Location = New System.Drawing.Point(1031, 157)
+        Me.tbRemark.Location = New System.Drawing.Point(687, 102)
+        Me.tbRemark.Margin = New System.Windows.Forms.Padding(2)
         Me.tbRemark.Multiline = True
         Me.tbRemark.Name = "tbRemark"
-        Me.tbRemark.Size = New System.Drawing.Size(298, 64)
+        Me.tbRemark.Size = New System.Drawing.Size(200, 43)
         Me.tbRemark.TabIndex = 41
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(934, 160)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(623, 104)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(78, 25)
+        Me.Label3.Size = New System.Drawing.Size(56, 17)
         Me.Label3.TabIndex = 40
         Me.Label3.Text = "บันทึกผล"
         '
         'cbMainAssociateJudge
         '
         Me.cbMainAssociateJudge.FormattingEnabled = True
-        Me.cbMainAssociateJudge.Location = New System.Drawing.Point(1031, 115)
-        Me.cbMainAssociateJudge.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.cbMainAssociateJudge.Location = New System.Drawing.Point(687, 75)
         Me.cbMainAssociateJudge.Name = "cbMainAssociateJudge"
-        Me.cbMainAssociateJudge.Size = New System.Drawing.Size(298, 33)
+        Me.cbMainAssociateJudge.Size = New System.Drawing.Size(200, 24)
         Me.cbMainAssociateJudge.TabIndex = 39
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(897, 118)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Location = New System.Drawing.Point(598, 77)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(115, 25)
+        Me.Label6.Size = New System.Drawing.Size(87, 17)
         Me.Label6.TabIndex = 38
         Me.Label6.Text = "ผู้รับรายงานตัว"
         '
@@ -182,37 +197,35 @@ Partial Class Rep2Pb
         '
         Me.dtpActDate.CustomFormat = "dd-MMM-yyyy"
         Me.dtpActDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpActDate.Location = New System.Drawing.Point(1031, 75)
-        Me.dtpActDate.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.dtpActDate.Location = New System.Drawing.Point(687, 49)
         Me.dtpActDate.Name = "dtpActDate"
-        Me.dtpActDate.Size = New System.Drawing.Size(181, 30)
+        Me.dtpActDate.Size = New System.Drawing.Size(122, 23)
         Me.dtpActDate.TabIndex = 37
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(875, 80)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(583, 52)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(137, 25)
+        Me.Label2.Size = New System.Drawing.Size(102, 17)
         Me.Label2.TabIndex = 19
         Me.Label2.Text = "วันที่มารายงานตัว"
         '
         'tbEstDate
         '
-        Me.tbEstDate.Location = New System.Drawing.Point(1031, 34)
+        Me.tbEstDate.Location = New System.Drawing.Point(687, 22)
+        Me.tbEstDate.Margin = New System.Windows.Forms.Padding(2)
         Me.tbEstDate.Name = "tbEstDate"
         Me.tbEstDate.ReadOnly = True
-        Me.tbEstDate.Size = New System.Drawing.Size(181, 30)
+        Me.tbEstDate.Size = New System.Drawing.Size(122, 23)
         Me.tbEstDate.TabIndex = 18
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(943, 37)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(629, 24)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(69, 25)
+        Me.Label1.Size = New System.Drawing.Size(49, 17)
         Me.Label1.TabIndex = 17
         Me.Label1.Text = "วันที่นัด"
         '
@@ -224,45 +237,15 @@ Partial Class Rep2Pb
         Me.dgvReport.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvReport.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.no, Me.estdate, Me.actdate})
-        Me.dgvReport.Location = New System.Drawing.Point(17, 29)
+        Me.dgvReport.Location = New System.Drawing.Point(11, 19)
+        Me.dgvReport.Margin = New System.Windows.Forms.Padding(2)
         Me.dgvReport.Name = "dgvReport"
         Me.dgvReport.ReadOnly = True
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(222, Byte))
         Me.dgvReport.RowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvReport.RowTemplate.Height = 28
-        Me.dgvReport.Size = New System.Drawing.Size(849, 406)
+        Me.dgvReport.Size = New System.Drawing.Size(566, 264)
         Me.dgvReport.TabIndex = 0
-        '
-        'btSearch
-        '
-        Me.btSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btSearch.Location = New System.Drawing.Point(734, 16)
-        Me.btSearch.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.btSearch.Name = "btSearch"
-        Me.btSearch.Size = New System.Drawing.Size(150, 41)
-        Me.btSearch.TabIndex = 18
-        Me.btSearch.Text = "ค้นหาเยาวชน"
-        Me.btSearch.UseVisualStyleBackColor = True
-        '
-        'tbFullname
-        '
-        Me.tbFullname.Enabled = False
-        Me.tbFullname.Location = New System.Drawing.Point(202, 19)
-        Me.tbFullname.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.tbFullname.Name = "tbFullname"
-        Me.tbFullname.ReadOnly = True
-        Me.tbFullname.Size = New System.Drawing.Size(499, 30)
-        Me.tbFullname.TabIndex = 17
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(13, 22)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(154, 25)
-        Me.Label5.TabIndex = 16
-        Me.Label5.Text = "ชื่อ-นามสกุลเยาวชน"
         '
         'id
         '
@@ -277,31 +260,59 @@ Partial Class Rep2Pb
         Me.no.HeaderText = "ครั้งที่"
         Me.no.Name = "no"
         Me.no.ReadOnly = True
-        Me.no.Width = 86
+        Me.no.Width = 58
         '
         'estdate
         '
         Me.estdate.HeaderText = "วันที่นัด"
         Me.estdate.Name = "estdate"
         Me.estdate.ReadOnly = True
-        Me.estdate.Width = 105
+        Me.estdate.Width = 69
         '
         'actdate
         '
         Me.actdate.HeaderText = "วันที่มารายงานตัว"
         Me.actdate.Name = "actdate"
         Me.actdate.ReadOnly = True
-        Me.actdate.Width = 173
+        Me.actdate.Width = 103
+        '
+        'btSearch
+        '
+        Me.btSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btSearch.Location = New System.Drawing.Point(489, 10)
+        Me.btSearch.Name = "btSearch"
+        Me.btSearch.Size = New System.Drawing.Size(100, 27)
+        Me.btSearch.TabIndex = 18
+        Me.btSearch.Text = "ค้นหาเยาวชน"
+        Me.btSearch.UseVisualStyleBackColor = True
+        '
+        'tbFullname
+        '
+        Me.tbFullname.Enabled = False
+        Me.tbFullname.Location = New System.Drawing.Point(135, 12)
+        Me.tbFullname.Name = "tbFullname"
+        Me.tbFullname.ReadOnly = True
+        Me.tbFullname.Size = New System.Drawing.Size(334, 23)
+        Me.tbFullname.TabIndex = 17
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(9, 14)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(114, 17)
+        Me.Label5.TabIndex = 16
+        Me.Label5.Text = "ชื่อ-นามสกุลเยาวชน"
         '
         'Rep2Pb
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1378, 544)
+        Me.ClientSize = New System.Drawing.Size(913, 354)
         Me.Controls.Add(Me.Panel1)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Rep2Pb"
         Me.Text = "บันทึกการรายงานตัว"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -334,4 +345,5 @@ Partial Class Rep2Pb
     Friend WithEvents no As DataGridViewTextBoxColumn
     Friend WithEvents estdate As DataGridViewTextBoxColumn
     Friend WithEvents actdate As DataGridViewTextBoxColumn
+    Friend WithEvents cbHasNextTime As CheckBox
 End Class

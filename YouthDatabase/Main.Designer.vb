@@ -35,14 +35,14 @@ Partial Class Main
         Me.mnuTreatment = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuConsult = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProbationMenu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuPBReport = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuPBAddActivity = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuPBTreatment = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuPBSummary = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.mnuPBAddActivity = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuPBTreatment = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuPBSummary = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuPBReport = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -120,6 +120,30 @@ Partial Class Main
         Me.ProbationMenu.Size = New System.Drawing.Size(91, 20)
         Me.ProbationMenu.Text = "ศูนย์รายงานตัว"
         '
+        'mnuPBReport
+        '
+        Me.mnuPBReport.Name = "mnuPBReport"
+        Me.mnuPBReport.Size = New System.Drawing.Size(203, 22)
+        Me.mnuPBReport.Text = "รายงานตัว"
+        '
+        'mnuPBAddActivity
+        '
+        Me.mnuPBAddActivity.Name = "mnuPBAddActivity"
+        Me.mnuPBAddActivity.Size = New System.Drawing.Size(203, 22)
+        Me.mnuPBAddActivity.Text = "ส่งต่อบำบัดฟื้นฟู"
+        '
+        'mnuPBTreatment
+        '
+        Me.mnuPBTreatment.Name = "mnuPBTreatment"
+        Me.mnuPBTreatment.Size = New System.Drawing.Size(203, 22)
+        Me.mnuPBTreatment.Text = "ส่งต่อทางจิดสังคมและจิตเวช"
+        '
+        'mnuPBSummary
+        '
+        Me.mnuPBSummary.Name = "mnuPBSummary"
+        Me.mnuPBSummary.Size = New System.Drawing.Size(203, 22)
+        Me.mnuPBSummary.Text = "สรุปผลการรายงายตัว"
+        '
         'ReportMenu
         '
         Me.ReportMenu.Name = "ReportMenu"
@@ -140,30 +164,6 @@ Partial Class Main
         Me.ToolStripStatusLabel.Name = "ToolStripStatusLabel"
         Me.ToolStripStatusLabel.Size = New System.Drawing.Size(39, 17)
         Me.ToolStripStatusLabel.Text = "Status"
-        '
-        'mnuPBAddActivity
-        '
-        Me.mnuPBAddActivity.Name = "mnuPBAddActivity"
-        Me.mnuPBAddActivity.Size = New System.Drawing.Size(203, 22)
-        Me.mnuPBAddActivity.Text = "ส่งต่อบำบัดฟื้นฟู"
-        '
-        'mnuPBTreatment
-        '
-        Me.mnuPBTreatment.Name = "mnuPBTreatment"
-        Me.mnuPBTreatment.Size = New System.Drawing.Size(203, 22)
-        Me.mnuPBTreatment.Text = "ส่งต่อทางจิดสังคมและจิตเวช"
-        '
-        'mnuPBSummary
-        '
-        Me.mnuPBSummary.Name = "mnuPBSummary"
-        Me.mnuPBSummary.Size = New System.Drawing.Size(203, 22)
-        Me.mnuPBSummary.Text = "สรุปผลการรายงายตัว"
-        '
-        'mnuPBReport
-        '
-        Me.mnuPBReport.Name = "mnuPBReport"
-        Me.mnuPBReport.Size = New System.Drawing.Size(203, 22)
-        Me.mnuPBReport.Text = "รายงานตัว"
         '
         'Main
         '

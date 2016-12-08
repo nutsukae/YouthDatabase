@@ -7,11 +7,13 @@ Public Class ProbationCenter
     Private _YouthID As Integer = -1
     Private _CaseID As Integer = -1
     Private _ProbationID As Integer = -1
+    Private _UserTypeId As Integer = -1
 
     Public Sub New()
         InitializeComponent()
-        'Me._UserID = GlobalVar.UserID
-        Me._UserID = 1
+        Me._UserID = GlobalVar.UserID
+        Me._UserTypeId = GlobalVar.UserTypeId
+        'Me._UserID = 1
         Me._Constr = ConnectionStrings("Connection").ToString
     End Sub
 
@@ -69,7 +71,8 @@ Public Class ProbationCenter
                 cbTransfer.Checked = CBool(Prob.IsTransfer)
                 dtpTransferDate.Text = Prob.TransferDate
 
-                'LoadActivity(_YouthID, _CaseID)
+                LoadReport(_ProbationID)
+                LoadActivity(_YouthID, _CaseID)
                 'GetDetailByID(_YouthID, _CaseID)
                 'btSubmit.Enabled = True
             End If
@@ -140,6 +143,55 @@ Public Class ProbationCenter
         End If
     End Sub
 
+    Private Sub LoadReport(ByVal ProbationID As Integer)
+        Dim R2P As New R2P(_Constr)
+        Dim ds As New DataSet
+        ds = R2P.ListByProbationID(ProbationID)
+
+        dgvReport.Rows.Clear()
+
+        If ds.Tables(0).Rows.Count > 0 Then
+            For Each row In ds.Tables(0).Rows
+                Dim ci = CultureInfo.CreateSpecificCulture("th-TH")
+                Dim id = row("id").ToString
+                Dim EstDate = CDate(row("EstDate")).ToString("dd MMMM yyyy", ci)
+                Dim ActDate = CDate(row("ActDate")).ToString("dd MMMM yyyy", ci)
+                Dim AstJudgeName = row("AstJudgeName").ToString
+                Dim ISUAName = row("ISUA_NAME").ToString
+                dgvReport.Rows.Add(id, dgvReport.Rows.Count + 1, EstDate, ActDate, AstJudgeName, ISUAName)
+            Next
+        End If
+    End Sub
+
+    Private Sub LoadActivity(ByVal YouthID As Integer, ByVal CaseID As Integer)
+        Dim advCenter = New AdvCenter(_Constr)
+        Dim ds = New DataSet
+        ds = advCenter.ListActivity(YouthID, CaseID, _UserTypeId)
+
+        If Not ds Is Nothing Then
+            Dim ci = CultureInfo.CreateSpecificCulture("th-TH")
+            If ds.Tables(0).Rows.Count > 0 Then
+                For Each row0 As DataRow In ds.Tables(0).Rows
+                    Dim actName = row0("actname").ToString
+                    Dim location = row0("location").ToString
+                    Dim actDate = CDate(row0("actDate")).ToString("dd MMMM yyyy", ci)
+                    Dim deptName = row0("deptname").ToString
+
+                    dgvAct0.Rows.Add(dgvAct0.Rows.Count + 1, actName, location, actDate, deptName)
+                Next
+            End If
+
+            If ds.Tables(1).Rows.Count > 0 Then
+                For Each row1 As DataRow In ds.Tables(1).Rows
+                    Dim location = row1("location").ToString
+                    Dim actDate = CDate(row1("actDate")).ToString("dd MMMM yyyy", ci)
+                    Dim deptName = row1("name").ToString
+                    dgvAct1.Rows.Add(dgvAct1.Rows.Count + 1, location, actDate, deptName)
+                Next
+            End If
+        End If
+    End Sub
+
     Private Sub Reset()
         tbFullname.Text = ""
         tbIDCard.Text = ""
@@ -164,6 +216,10 @@ Public Class ProbationCenter
         dgvReport.Rows.Clear()
         dgvAct0.Rows.Clear()
         dgvAct1.Rows.Clear()
+
+        _YouthID = -1
+        _CaseID = -1
+        _ProbationID = -1
     End Sub
 #End Region
 
