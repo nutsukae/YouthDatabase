@@ -71,7 +71,7 @@ Public Class Treatment_Info
             Dim ActID As Integer = _Act.Insert2(Name, ActTypeId, Location, DeptId, ActDate, _UserID)
 
             If ActID <> -1 Then
-                If _Act.AddYouth(ActID, _YouthID, _CaseID, _UserTypeID, 0, _UserID) Then
+                If _Act.AddYouth(ActID, _YouthID, _CaseID, _UserTypeID, "N", "", _UserID) Then
                     MessageBox.Show("เพิ่มข้อมูลกิจกรรมเรียบร้อยครับ", "แจ้งผลการดำเนินการ", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Reset()
                     Exit Sub

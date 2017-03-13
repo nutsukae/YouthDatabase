@@ -2,6 +2,11 @@
 
 Public Class Religion
     Private _Constr As String
+    Public Enum Status
+        พุทธ = 1
+        คริสต์ = 2
+        อิสลาม = 3
+    End Enum
 
     Public Sub New(ByVal ConnectionString As String)
         Me._Constr = ConnectionString

@@ -75,9 +75,9 @@ Partial Class Lawsuit
         Me.name = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.btSearch = New System.Windows.Forms.Button()
         Me.btReset = New System.Windows.Forms.Button()
         Me.btSave = New System.Windows.Forms.Button()
-        Me.btSearch = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -99,9 +99,10 @@ Partial Class Lawsuit
         Me.Panel1.Controls.Add(Me.GroupBox1)
         Me.Panel1.Controls.Add(Me.Panel4)
         Me.Panel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel1.Location = New System.Drawing.Point(5, 3)
+        Me.Panel1.Location = New System.Drawing.Point(8, 5)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1178, 735)
+        Me.Panel1.Size = New System.Drawing.Size(1669, 986)
         Me.Panel1.TabIndex = 0
         '
         'GroupBox2
@@ -122,9 +123,11 @@ Partial Class Lawsuit
         Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Controls.Add(Me.tbBlackNo)
         Me.GroupBox2.Controls.Add(Me.Label7)
-        Me.GroupBox2.Location = New System.Drawing.Point(3, 528)
+        Me.GroupBox2.Location = New System.Drawing.Point(4, 744)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(1172, 140)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox2.Size = New System.Drawing.Size(1660, 215)
         Me.GroupBox2.TabIndex = 14
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "ระหว่างพิจารณาคดี"
@@ -133,17 +136,19 @@ Partial Class Lawsuit
         '
         Me.dtpEx.CustomFormat = "dd-MMM-yyyy"
         Me.dtpEx.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpEx.Location = New System.Drawing.Point(1020, 22)
+        Me.dtpEx.Location = New System.Drawing.Point(1530, 34)
+        Me.dtpEx.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.dtpEx.Name = "dtpEx"
-        Me.dtpEx.Size = New System.Drawing.Size(120, 23)
+        Me.dtpEx.Size = New System.Drawing.Size(178, 30)
         Me.dtpEx.TabIndex = 26
         '
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(912, 27)
+        Me.Label15.Location = New System.Drawing.Point(1368, 42)
+        Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(102, 17)
+        Me.Label15.Size = New System.Drawing.Size(137, 25)
         Me.Label15.TabIndex = 25
         Me.Label15.Text = "วันนัดพิจารณาผล"
         '
@@ -151,17 +156,19 @@ Partial Class Lawsuit
         '
         Me.dtpExPlan.CustomFormat = "dd-MMM-yyyy"
         Me.dtpExPlan.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpExPlan.Location = New System.Drawing.Point(773, 22)
+        Me.dtpExPlan.Location = New System.Drawing.Point(1160, 34)
+        Me.dtpExPlan.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.dtpExPlan.Name = "dtpExPlan"
-        Me.dtpExPlan.Size = New System.Drawing.Size(120, 23)
+        Me.dtpExPlan.Size = New System.Drawing.Size(178, 30)
         Me.dtpExPlan.TabIndex = 24
         '
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(655, 27)
+        Me.Label16.Location = New System.Drawing.Point(982, 42)
+        Me.Label16.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(112, 17)
+        Me.Label16.Size = New System.Drawing.Size(151, 25)
         Me.Label16.TabIndex = 23
         Me.Label16.Text = "วันนัดพิจารณาแผน"
         '
@@ -169,17 +176,19 @@ Partial Class Lawsuit
         '
         Me.dtpPlan.CustomFormat = "dd-MMM-yyyy"
         Me.dtpPlan.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpPlan.Location = New System.Drawing.Point(529, 25)
+        Me.dtpPlan.Location = New System.Drawing.Point(794, 38)
+        Me.dtpPlan.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.dtpPlan.Name = "dtpPlan"
-        Me.dtpPlan.Size = New System.Drawing.Size(120, 23)
+        Me.dtpPlan.Size = New System.Drawing.Size(178, 30)
         Me.dtpPlan.TabIndex = 22
         '
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(447, 27)
+        Me.Label17.Location = New System.Drawing.Point(670, 42)
+        Me.Label17.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(76, 17)
+        Me.Label17.Size = New System.Drawing.Size(103, 25)
         Me.Label17.TabIndex = 21
         Me.Label17.Text = "วันส่งทำแผน"
         '
@@ -187,9 +196,10 @@ Partial Class Lawsuit
         '
         Me.rbProgess.AutoSize = True
         Me.rbProgess.Checked = True
-        Me.rbProgess.Location = New System.Drawing.Point(249, 26)
+        Me.rbProgess.Location = New System.Drawing.Point(374, 40)
+        Me.rbProgess.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.rbProgess.Name = "rbProgess"
-        Me.rbProgess.Size = New System.Drawing.Size(116, 21)
+        Me.rbProgess.Size = New System.Drawing.Size(156, 29)
         Me.rbProgess.TabIndex = 15
         Me.rbProgess.TabStop = True
         Me.rbProgess.Text = "ยังไม่พิจารณาคดี"
@@ -198,9 +208,10 @@ Partial Class Lawsuit
         'rbOther
         '
         Me.rbOther.AutoSize = True
-        Me.rbOther.Location = New System.Drawing.Point(249, 110)
+        Me.rbOther.Location = New System.Drawing.Point(374, 154)
+        Me.rbOther.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.rbOther.Name = "rbOther"
-        Me.rbOther.Size = New System.Drawing.Size(77, 21)
+        Me.rbOther.Size = New System.Drawing.Size(105, 29)
         Me.rbOther.TabIndex = 14
         Me.rbOther.Text = "มาตราอื่น"
         Me.rbOther.UseVisualStyleBackColor = True
@@ -208,9 +219,10 @@ Partial Class Lawsuit
         'rb132
         '
         Me.rb132.AutoSize = True
-        Me.rb132.Location = New System.Drawing.Point(249, 82)
+        Me.rb132.Location = New System.Drawing.Point(374, 115)
+        Me.rb132.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.rb132.Name = "rb132"
-        Me.rb132.Size = New System.Drawing.Size(62, 21)
+        Me.rb132.Size = New System.Drawing.Size(86, 29)
         Me.rb132.TabIndex = 13
         Me.rb132.Text = "ม.132"
         Me.rb132.UseVisualStyleBackColor = True
@@ -218,42 +230,47 @@ Partial Class Lawsuit
         'rb90
         '
         Me.rb90.AutoSize = True
-        Me.rb90.Location = New System.Drawing.Point(249, 54)
+        Me.rb90.Location = New System.Drawing.Point(374, 76)
+        Me.rb90.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.rb90.Name = "rb90"
-        Me.rb90.Size = New System.Drawing.Size(54, 21)
+        Me.rb90.Size = New System.Drawing.Size(75, 29)
         Me.rb90.TabIndex = 12
         Me.rb90.Text = "ม.90"
         Me.rb90.UseVisualStyleBackColor = True
         '
         'tbRedNo
         '
-        Me.tbRedNo.Location = New System.Drawing.Point(113, 53)
+        Me.tbRedNo.Location = New System.Drawing.Point(170, 74)
+        Me.tbRedNo.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbRedNo.Name = "tbRedNo"
-        Me.tbRedNo.Size = New System.Drawing.Size(115, 23)
+        Me.tbRedNo.Size = New System.Drawing.Size(170, 30)
         Me.tbRedNo.TabIndex = 11
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(42, 56)
+        Me.Label8.Location = New System.Drawing.Point(63, 78)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(65, 17)
+        Me.Label8.Size = New System.Drawing.Size(86, 25)
         Me.Label8.TabIndex = 10
         Me.Label8.Text = "เลขคดีแดง"
         '
         'tbBlackNo
         '
-        Me.tbBlackNo.Location = New System.Drawing.Point(113, 25)
+        Me.tbBlackNo.Location = New System.Drawing.Point(170, 38)
+        Me.tbBlackNo.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbBlackNo.Name = "tbBlackNo"
-        Me.tbBlackNo.Size = New System.Drawing.Size(115, 23)
+        Me.tbBlackNo.Size = New System.Drawing.Size(170, 30)
         Me.tbBlackNo.TabIndex = 9
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(50, 28)
+        Me.Label7.Location = New System.Drawing.Point(75, 43)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(57, 17)
+        Me.Label7.Size = New System.Drawing.Size(77, 25)
         Me.Label7.TabIndex = 8
         Me.Label7.Text = "เลขคดีดำ"
         '
@@ -264,9 +281,11 @@ Partial Class Lawsuit
         Me.GroupBox1.Controls.Add(Me.Panel2)
         Me.GroupBox1.Controls.Add(Me.Panel6)
         Me.GroupBox1.Controls.Add(Me.Panel5)
-        Me.GroupBox1.Location = New System.Drawing.Point(5, 52)
+        Me.GroupBox1.Location = New System.Drawing.Point(8, 80)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1170, 472)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox1.Size = New System.Drawing.Size(1657, 726)
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "ก่อนพิจารณาคดี"
@@ -277,23 +296,23 @@ Partial Class Lawsuit
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel2.Controls.Add(Me.dgvYouth)
         Me.Panel2.Controls.Add(Me.Label4)
-        Me.Panel2.Location = New System.Drawing.Point(6, 268)
+        Me.Panel2.Location = New System.Drawing.Point(9, 384)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1158, 197)
+        Me.Panel2.Size = New System.Drawing.Size(1639, 275)
         Me.Panel2.TabIndex = 13
         '
         'dgvYouth
         '
         Me.dgvYouth.AllowUserToAddRows = False
         Me.dgvYouth.AllowUserToDeleteRows = False
-        Me.dgvYouth.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvYouth.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvYouth.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.idcard})
-        Me.dgvYouth.Location = New System.Drawing.Point(10, 30)
+        Me.dgvYouth.Location = New System.Drawing.Point(15, 46)
+        Me.dgvYouth.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.dgvYouth.Name = "dgvYouth"
         Me.dgvYouth.ReadOnly = True
-        Me.dgvYouth.Size = New System.Drawing.Size(998, 155)
+        Me.dgvYouth.Size = New System.Drawing.Size(1399, 222)
         Me.dgvYouth.TabIndex = 11
         '
         'DataGridViewTextBoxColumn2
@@ -321,9 +340,10 @@ Partial Class Lawsuit
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(9, 10)
+        Me.Label4.Location = New System.Drawing.Point(14, 15)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(39, 17)
+        Me.Label4.Size = New System.Drawing.Size(53, 25)
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "จำเลย"
         '
@@ -351,67 +371,75 @@ Partial Class Lawsuit
         Me.Panel6.Controls.Add(Me.Label2)
         Me.Panel6.Controls.Add(Me.dtpLawsuit)
         Me.Panel6.Controls.Add(Me.Label3)
-        Me.Panel6.Location = New System.Drawing.Point(6, 22)
+        Me.Panel6.Location = New System.Drawing.Point(9, 34)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(1158, 95)
+        Me.Panel6.Size = New System.Drawing.Size(1639, 136)
         Me.Panel6.TabIndex = 0
         '
         'cbCaseType
         '
         Me.cbCaseType.FormattingEnabled = True
-        Me.cbCaseType.Location = New System.Drawing.Point(78, 8)
+        Me.cbCaseType.Location = New System.Drawing.Point(117, 12)
+        Me.cbCaseType.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.cbCaseType.Name = "cbCaseType"
-        Me.cbCaseType.Size = New System.Drawing.Size(121, 24)
+        Me.cbCaseType.Size = New System.Drawing.Size(180, 33)
         Me.cbCaseType.TabIndex = 26
         '
         'cbLocation
         '
         Me.cbLocation.FormattingEnabled = True
-        Me.cbLocation.Location = New System.Drawing.Point(435, 8)
+        Me.cbLocation.Location = New System.Drawing.Point(652, 12)
+        Me.cbLocation.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.cbLocation.Name = "cbLocation"
-        Me.cbLocation.Size = New System.Drawing.Size(121, 24)
+        Me.cbLocation.Size = New System.Drawing.Size(180, 33)
         Me.cbLocation.TabIndex = 25
         '
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(345, 11)
+        Me.Label18.Location = New System.Drawing.Point(518, 17)
+        Me.Label18.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(87, 17)
+        Me.Label18.Size = New System.Drawing.Size(118, 25)
         Me.Label18.TabIndex = 24
         Me.Label18.Text = "สถานที่เกิดเหตุ"
         '
         'mtbMobile
         '
-        Me.mtbMobile.Location = New System.Drawing.Point(1061, 63)
+        Me.mtbMobile.Location = New System.Drawing.Point(1502, 93)
+        Me.mtbMobile.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.mtbMobile.Mask = "000-000-0000"
         Me.mtbMobile.Name = "mtbMobile"
-        Me.mtbMobile.Size = New System.Drawing.Size(90, 23)
+        Me.mtbMobile.Size = New System.Drawing.Size(133, 30)
         Me.mtbMobile.TabIndex = 20
         Me.mtbMobile.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
         '
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(975, 66)
+        Me.Label14.Location = New System.Drawing.Point(1372, 98)
+        Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(80, 17)
+        Me.Label14.Size = New System.Drawing.Size(107, 25)
         Me.Label14.TabIndex = 23
         Me.Label14.Text = "เบอร์โทรศัพท์"
         '
         'tbVictimAddress
         '
-        Me.tbVictimAddress.Location = New System.Drawing.Point(347, 63)
+        Me.tbVictimAddress.Location = New System.Drawing.Point(513, 93)
+        Me.tbVictimAddress.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbVictimAddress.Name = "tbVictimAddress"
-        Me.tbVictimAddress.Size = New System.Drawing.Size(611, 23)
+        Me.tbVictimAddress.Size = New System.Drawing.Size(851, 30)
         Me.tbVictimAddress.TabIndex = 19
         '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(314, 66)
+        Me.Label13.Location = New System.Drawing.Point(471, 98)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(30, 17)
+        Me.Label13.Size = New System.Drawing.Size(43, 25)
         Me.Label13.TabIndex = 21
         Me.Label13.Text = "ที่อยู่"
         '
@@ -419,49 +447,55 @@ Partial Class Lawsuit
         '
         Me.dtpInspect.CustomFormat = "dd-MMM-yyyy"
         Me.dtpInspect.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpInspect.Location = New System.Drawing.Point(1033, 8)
+        Me.dtpInspect.Location = New System.Drawing.Point(1550, 12)
+        Me.dtpInspect.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.dtpInspect.Name = "dtpInspect"
-        Me.dtpInspect.Size = New System.Drawing.Size(119, 23)
+        Me.dtpInspect.Size = New System.Drawing.Size(176, 30)
         Me.dtpInspect.TabIndex = 20
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(939, 11)
+        Me.Label12.Location = New System.Drawing.Point(1408, 17)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(96, 17)
+        Me.Label12.Size = New System.Drawing.Size(127, 25)
         Me.Label12.TabIndex = 19
         Me.Label12.Text = "วันสอบคำให้การ"
         '
         'tbVictimName
         '
-        Me.tbVictimName.Location = New System.Drawing.Point(78, 63)
+        Me.tbVictimName.Location = New System.Drawing.Point(117, 93)
+        Me.tbVictimName.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbVictimName.Name = "tbVictimName"
-        Me.tbVictimName.Size = New System.Drawing.Size(222, 23)
+        Me.tbVictimName.Size = New System.Drawing.Size(331, 30)
         Me.tbVictimName.TabIndex = 18
         '
         'tbCaseTitle
         '
-        Me.tbCaseTitle.Location = New System.Drawing.Point(78, 36)
+        Me.tbCaseTitle.Location = New System.Drawing.Point(117, 54)
+        Me.tbCaseTitle.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbCaseTitle.Name = "tbCaseTitle"
-        Me.tbCaseTitle.Size = New System.Drawing.Size(1074, 23)
+        Me.tbCaseTitle.Size = New System.Drawing.Size(1518, 30)
         Me.tbCaseTitle.TabIndex = 17
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(7, 66)
+        Me.Label11.Location = New System.Drawing.Point(10, 98)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(71, 17)
+        Me.Label11.Size = New System.Drawing.Size(97, 25)
         Me.Label11.TabIndex = 16
         Me.Label11.Text = "ชือผู้เสียหาย"
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(8, 39)
+        Me.Label10.Location = New System.Drawing.Point(12, 59)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(32, 17)
+        Me.Label10.Size = New System.Drawing.Size(41, 25)
         Me.Label10.TabIndex = 15
         Me.Label10.Text = "เรื่อง"
         '
@@ -469,43 +503,48 @@ Partial Class Lawsuit
         '
         Me.dtpAdvice.CustomFormat = "dd-MMM-yyyy"
         Me.dtpAdvice.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpAdvice.Location = New System.Drawing.Point(814, 8)
+        Me.dtpAdvice.Location = New System.Drawing.Point(1221, 12)
+        Me.dtpAdvice.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.dtpAdvice.Name = "dtpAdvice"
-        Me.dtpAdvice.Size = New System.Drawing.Size(122, 23)
+        Me.dtpAdvice.Size = New System.Drawing.Size(181, 30)
         Me.dtpAdvice.TabIndex = 14
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(9, 11)
+        Me.Label1.Location = New System.Drawing.Point(14, 17)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(65, 17)
+        Me.Label1.Size = New System.Drawing.Size(90, 25)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "ประเภทคดี"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(739, 11)
+        Me.Label9.Location = New System.Drawing.Point(1108, 17)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(73, 17)
+        Me.Label9.Size = New System.Drawing.Size(100, 25)
         Me.Label9.TabIndex = 13
         Me.Label9.Text = "วันเข้าศูนย์ฯ"
         '
         'tbCaseNo
         '
-        Me.tbCaseNo.Location = New System.Drawing.Point(254, 8)
+        Me.tbCaseNo.Location = New System.Drawing.Point(381, 12)
+        Me.tbCaseNo.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbCaseNo.Name = "tbCaseNo"
-        Me.tbCaseNo.Size = New System.Drawing.Size(88, 23)
+        Me.tbCaseNo.Size = New System.Drawing.Size(130, 30)
         Me.tbCaseNo.TabIndex = 5
         Me.tbCaseNo.Text = "มต. "
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(202, 11)
+        Me.Label2.Location = New System.Drawing.Point(303, 17)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(51, 17)
+        Me.Label2.Size = New System.Drawing.Size(70, 25)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "เลขที่คดี"
         '
@@ -513,17 +552,19 @@ Partial Class Lawsuit
         '
         Me.dtpLawsuit.CustomFormat = "dd-MMM-yyyy"
         Me.dtpLawsuit.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpLawsuit.Location = New System.Drawing.Point(623, 8)
+        Me.dtpLawsuit.Location = New System.Drawing.Point(934, 12)
+        Me.dtpLawsuit.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.dtpLawsuit.Name = "dtpLawsuit"
-        Me.dtpLawsuit.Size = New System.Drawing.Size(113, 23)
+        Me.dtpLawsuit.Size = New System.Drawing.Size(168, 30)
         Me.dtpLawsuit.TabIndex = 7
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(561, 11)
+        Me.Label3.Location = New System.Drawing.Point(842, 17)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(61, 17)
+        Me.Label3.Size = New System.Drawing.Size(80, 25)
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "วันรับฟ้อง"
         '
@@ -535,29 +576,30 @@ Partial Class Lawsuit
         Me.Panel5.Controls.Add(Me.btInsertTort)
         Me.Panel5.Controls.Add(Me.dgvTort)
         Me.Panel5.Controls.Add(Me.Label5)
-        Me.Panel5.Location = New System.Drawing.Point(6, 119)
+        Me.Panel5.Location = New System.Drawing.Point(9, 180)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1158, 146)
+        Me.Panel5.Size = New System.Drawing.Size(1639, 199)
         Me.Panel5.TabIndex = 12
         '
         'btRemoveTort
         '
-        Me.btRemoveTort.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btRemoveTort.Cursor = System.Windows.Forms.Cursors.Default
-        Me.btRemoveTort.Location = New System.Drawing.Point(1014, 64)
+        Me.btRemoveTort.Location = New System.Drawing.Point(1423, 98)
+        Me.btRemoveTort.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btRemoveTort.Name = "btRemoveTort"
-        Me.btRemoveTort.Size = New System.Drawing.Size(126, 28)
+        Me.btRemoveTort.Size = New System.Drawing.Size(189, 43)
         Me.btRemoveTort.TabIndex = 13
         Me.btRemoveTort.Text = "ลบมูลฐานความผิด"
         Me.btRemoveTort.UseVisualStyleBackColor = True
         '
         'btInsertTort
         '
-        Me.btInsertTort.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btInsertTort.Cursor = System.Windows.Forms.Cursors.Default
-        Me.btInsertTort.Location = New System.Drawing.Point(1014, 30)
+        Me.btInsertTort.Location = New System.Drawing.Point(1423, 46)
+        Me.btInsertTort.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btInsertTort.Name = "btInsertTort"
-        Me.btInsertTort.Size = New System.Drawing.Size(126, 28)
+        Me.btInsertTort.Size = New System.Drawing.Size(189, 43)
         Me.btInsertTort.TabIndex = 12
         Me.btInsertTort.Text = "เพิ่มมูลฐานความผิด"
         Me.btInsertTort.UseVisualStyleBackColor = True
@@ -566,14 +608,13 @@ Partial Class Lawsuit
         '
         Me.dgvTort.AllowUserToAddRows = False
         Me.dgvTort.AllowUserToDeleteRows = False
-        Me.dgvTort.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgvTort.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvTort.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.no, Me.name})
-        Me.dgvTort.Location = New System.Drawing.Point(12, 30)
+        Me.dgvTort.Location = New System.Drawing.Point(18, 46)
+        Me.dgvTort.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.dgvTort.Name = "dgvTort"
         Me.dgvTort.ReadOnly = True
-        Me.dgvTort.Size = New System.Drawing.Size(996, 111)
+        Me.dgvTort.Size = New System.Drawing.Size(1396, 143)
         Me.dgvTort.TabIndex = 11
         '
         'ID
@@ -601,9 +642,10 @@ Partial Class Lawsuit
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(9, 10)
+        Me.Label5.Location = New System.Drawing.Point(14, 15)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(53, 17)
+        Me.Label5.Size = New System.Drawing.Size(72, 25)
         Me.Label5.TabIndex = 9
         Me.Label5.Text = "ความผิด"
         '
@@ -611,60 +653,63 @@ Partial Class Lawsuit
         '
         Me.Panel4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel4.Controls.Add(Me.btSearch)
         Me.Panel4.Controls.Add(Me.btReset)
         Me.Panel4.Controls.Add(Me.btSave)
-        Me.Panel4.Controls.Add(Me.btSearch)
         Me.Panel4.Controls.Add(Me.Label6)
-        Me.Panel4.Location = New System.Drawing.Point(3, 3)
+        Me.Panel4.Location = New System.Drawing.Point(4, 5)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1172, 45)
+        Me.Panel4.Size = New System.Drawing.Size(1660, 69)
         Me.Panel4.TabIndex = 11
+        '
+        'btSearch
+        '
+        Me.btSearch.Location = New System.Drawing.Point(139, 15)
+        Me.btSearch.Name = "btSearch"
+        Me.btSearch.Size = New System.Drawing.Size(109, 43)
+        Me.btSearch.TabIndex = 10
+        Me.btSearch.Text = "ค้นหาคดี"
+        Me.btSearch.UseVisualStyleBackColor = True
         '
         'btReset
         '
-        Me.btReset.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btReset.Location = New System.Drawing.Point(1089, 10)
+        Me.btReset.Location = New System.Drawing.Point(1536, 15)
+        Me.btReset.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btReset.Name = "btReset"
-        Me.btReset.Size = New System.Drawing.Size(75, 28)
+        Me.btReset.Size = New System.Drawing.Size(112, 43)
         Me.btReset.TabIndex = 9
         Me.btReset.Text = "เริ่มใหม่"
         Me.btReset.UseVisualStyleBackColor = True
         '
         'btSave
         '
-        Me.btSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btSave.Cursor = System.Windows.Forms.Cursors.Default
-        Me.btSave.Location = New System.Drawing.Point(1008, 9)
+        Me.btSave.Location = New System.Drawing.Point(1414, 14)
+        Me.btSave.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btSave.Name = "btSave"
-        Me.btSave.Size = New System.Drawing.Size(75, 28)
+        Me.btSave.Size = New System.Drawing.Size(112, 43)
         Me.btSave.TabIndex = 8
         Me.btSave.Text = "บันทึกคดี"
         Me.btSave.UseVisualStyleBackColor = True
         '
-        'btSearch
-        '
-        Me.btSearch.Image = Global.YouthDatabase.My.Resources.Resources.Search_1_36
-        Me.btSearch.Location = New System.Drawing.Point(104, 6)
-        Me.btSearch.Name = "btSearch"
-        Me.btSearch.Size = New System.Drawing.Size(36, 36)
-        Me.btSearch.TabIndex = 7
-        Me.btSearch.UseVisualStyleBackColor = True
-        '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(36, 17)
+        Me.Label6.Location = New System.Drawing.Point(54, 26)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(56, 17)
+        Me.Label6.Size = New System.Drawing.Size(78, 25)
         Me.Label6.TabIndex = 1
         Me.Label6.Text = "ค้นหาคดี"
         '
         'Lawsuit
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1184, 750)
+        Me.ClientSize = New System.Drawing.Size(1678, 994)
         Me.Controls.Add(Me.Panel1)
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         'Me.name = "Lawsuit"
         Me.Text = "ข้อมูลคดี"
         Me.Panel1.ResumeLayout(False)
@@ -696,7 +741,6 @@ Partial Class Lawsuit
     Friend WithEvents Label5 As Label
     Friend WithEvents dgvTort As DataGridView
     Friend WithEvents Label6 As Label
-    Friend WithEvents btSearch As Button
     Friend WithEvents Label7 As Label
     Friend WithEvents tbRedNo As TextBox
     Friend WithEvents Label8 As Label
@@ -742,4 +786,5 @@ Partial Class Lawsuit
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
     Friend WithEvents idcard As DataGridViewTextBoxColumn
     Friend WithEvents cbCaseType As ComboBox
+    Friend WithEvents btSearch As Button
 End Class

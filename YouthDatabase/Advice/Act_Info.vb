@@ -8,6 +8,7 @@ Public Class Act_Info
     Private _ActId As Integer = -1
     Private _YouthID As Integer
     Private _CaseID As Integer
+    Private _ActPerID As Integer = -1
 
     Public Sub New()
         InitializeComponent()
@@ -46,8 +47,9 @@ Public Class Act_Info
                 Dim religion = row("religion").ToString
                 Dim shirt_size = row("shirt_size").ToString
                 Dim shoe_size = row("shoe_size").ToString
-                Dim status = CInt(row("status"))
-                dgvYouthList.Rows.Add(ap_id, dgvYouthList.Rows.Count + 1, idcard, fullname, blackno, title, mobile, address, sex, religion, shirt_size, shoe_size, status)
+                Dim status = row("status").ToString
+                Dim remark = row("remark").ToString
+                dgvYouthList.Rows.Add(ap_id, dgvYouthList.Rows.Count + 1, idcard, fullname, blackno, title, mobile, address, sex, religion, shirt_size, shoe_size, status, remark)
             Next
 
         End If
@@ -81,8 +83,13 @@ Public Class Act_Info
     Private Sub Reset()
         tbLocation.Text = ""
         tbName.Text = ""
+        txtRemark.Text = ""
+
+        cbStatus.Checked = False
         dtpActDate.Text = Now
-        _actid = -1
+
+        _ActId = -1
+        _ActPerID = -1
     End Sub
 #End Region
 
@@ -102,7 +109,7 @@ Public Class Act_Info
 
                 Dim _Act = New Activity(_Constr)
 
-                If _Act.AddYouth(_ActId, _YouthID, _CaseID, _UserTypeId, 0, _UserID) Then
+                If _Act.AddYouth(_ActId, _YouthID, _CaseID, _UserTypeId, "N", "", _UserID) Then
                     'MessageBox.Show("เพิ่มเยาวชนเรียบร้อยครับ", "แจ้งผลการดำเนินการ", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     'Exit Sub
                     ListActivityPersonDetail(_ActId)
@@ -218,14 +225,29 @@ Public Class Act_Info
 
     Private Sub btUpdateAll_Click(sender As Object, e As EventArgs) Handles btUpdateAll.Click
         Dim _act = New Activity(_Constr)
-        For Each row As DataGridViewRow In dgvYouthList.Rows
-            Dim ActPerID = CInt(row.Cells("id").Value)
-            Dim status = CInt(row.Cells("status").Value)
-            _act.UpdateYouth(ActPerID, status, _UserID)
-        Next
+        Dim status = IIf(cbStatus.Checked, "Y", "N")
+        Dim Remark = txtRemark.Text
+
+        _act.UpdateYouth(_ActPerID, status, Remark, _UserID)
 
         MessageBox.Show("อัพเดทข้อมูลเรียบร้อยครับ", "แจ้งผลการดำเนินการ", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 #End Region
+
+#Region "DataGridView"
+    Private Sub dgvYouthList_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvYouthList.CellContentDoubleClick
+        _ActPerID = CInt(dgvYouthList.Rows(e.RowIndex).Cells("ID").Value)
+        Dim Status = dgvYouthList.Rows(e.RowIndex).Cells("Status").Value
+        Dim Remark = dgvYouthList.Rows(e.RowIndex).Cells("Remark").Value
+
+        txtRemark.Text = Remark
+        If Status = "Y" Then
+            cbStatus.Checked = True
+        Else
+            cbStatus.Checked = False
+        End If
+    End Sub
+#End Region
+
 
 End Class

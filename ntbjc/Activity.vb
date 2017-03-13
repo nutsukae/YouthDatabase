@@ -7,7 +7,7 @@ Public Class Activity
         Me._Constr = ConnectionString
     End Sub
 
-    Public Function AddYouth(ByVal ActivityID As Integer, ByVal YouthID As Integer, ByVal CaseID As Integer, ByVal Ref As Integer, ByVal Status As Integer, ByVal LMU As Integer) As Boolean
+    Public Function AddYouth(ByVal ActivityID As Integer, ByVal YouthID As Integer, ByVal CaseID As Integer, ByVal Ref As Integer, ByVal Status As String, ByVal Remark As String, ByVal LMU As Integer) As Boolean
         Dim conn As SqlConnection = New SqlConnection(_Constr)
         Dim command As SqlCommand = New SqlCommand()
 
@@ -22,7 +22,8 @@ Public Class Activity
             command.Parameters.Add("@PersonID", SqlDbType.Int).Value = YouthID
             command.Parameters.Add("@CaseID", SqlDbType.Int).Value = CaseID
             command.Parameters.Add("@Ref", SqlDbType.Int).Value = Ref
-            command.Parameters.Add("@Status", SqlDbType.Int).Value = Status
+            command.Parameters.Add("@Status", SqlDbType.NVarChar, 1).Value = Status
+            command.Parameters.Add("@Remark", SqlDbType.NVarChar, 100).Value = Remark
             command.Parameters.Add("@lmu", SqlDbType.Int).Value = LMU
 
             Return CBool(command.ExecuteNonQuery())
@@ -290,7 +291,7 @@ Public Class Activity
         End Try
     End Function
 
-    Public Function UpdateYouth(ByVal ActivityPersonID As Integer, ByVal Status As Integer, ByVal LMU As Integer) As Boolean
+    Public Function UpdateYouth(ByVal ActivityPersonID As Integer, ByVal Status As String, ByVal Remark As String, ByVal LMU As Integer) As Boolean
         Dim conn As SqlConnection = New SqlConnection(_Constr)
         Dim command As SqlCommand = New SqlCommand()
 
@@ -302,7 +303,8 @@ Public Class Activity
             command.CommandType = CommandType.StoredProcedure
             command.CommandText = "sp_ActivityPerson_Update"
             command.Parameters.Add("@ActPerID", SqlDbType.Int).Value = ActivityPersonID
-            command.Parameters.Add("@Status", SqlDbType.Int).Value = Status
+            command.Parameters.Add("@Status", SqlDbType.NVarChar, 1).Value = Status
+            command.Parameters.Add("@Remark", SqlDbType.NVarChar, 100).Value = Remark
             command.Parameters.Add("@lmu", SqlDbType.Int).Value = LMU
 
             Return CBool(command.ExecuteNonQuery())

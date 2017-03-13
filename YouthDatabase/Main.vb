@@ -122,6 +122,21 @@ Public Class Main
         frm.WindowState = FormWindowState.Maximized
         frm.Show()
     End Sub
-
 #End Region
+
+#Region "Report"
+    Private Sub mnuRptActPer_Click(sender As Object, e As EventArgs) Handles mnuRptActPer.Click
+        'Step: Call rptActPer -> Search Activity -> rptActPer -> Gen Excel
+        If ActiveMdiChild IsNot Nothing Then
+            ActiveMdiChild.Close()
+        End If
+
+        Dim frm = New rptActPer
+        frm.MdiParent = Me
+        frm.WindowState = FormWindowState.Maximized
+        frm.Show()
+    End Sub
+#End Region
+
+
 End Class

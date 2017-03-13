@@ -2,6 +2,8 @@
 Imports System.Globalization
 Imports ntbjc
 Imports System.Configuration.ConfigurationManager
+Imports Word = Microsoft.Office.Interop.Word
+Imports System.IO
 
 Public Class Person
     Private isSeacrh As Boolean = False
@@ -659,10 +661,114 @@ Public Class Person
         Me._UserID = GlobalVar.UserID
         'Me._UserID = 1
         Me._Constr = ConnectionStrings("Connection").ToString
-        Me.WindowState = FormWindowState.Maximized
+        'Me.WindowState = FormWindowState.Maximized
 
         LoadReligion()
     End Sub
 
+    Private Sub ReleasedObject(ByVal obj As Object)
+        Try
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(obj)
+            obj = Nothing
+        Catch ex As Exception
+            obj = Nothing
+            MessageBox.Show("Exception Occurred while releasing object " + ex.ToString())
+        Finally
+            GC.Collect()
+        End Try
+    End Sub
 
+    Private Sub btPrint_Click(sender As Object, e As EventArgs) Handles btPrint.Click
+        Dim sfd As New SaveFileDialog
+        sfd.Filter = "Word Documents (*.doc)|*.doc"
+        sfd.FileName = "Youth.doc"
+
+        If sfd.ShowDialog = DialogResult.OK Then
+            'Preparing Data
+            If _PersonID = -1 Then
+                MessageBox.Show("กรุณาค้นหาเด็กก่อนครับ", "แจ้งข้อผิดพลาด", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                btSearchYouth.Focus()
+                Exit Sub
+            End If
+
+            Dim _youth As New Youth(_Constr)
+            _youth.GetYouth(_PersonID)
+            Dim ci = CultureInfo.CreateSpecificCulture("th-TH")
+
+            'Preparing word document
+            Dim oMissing = System.Reflection.Missing.Value
+            Dim oEndofDoc = "\\endofdoc"
+            Dim oWord As New Word.Application
+            Dim oDoc As Word.Document
+            oWord.Visible = True
+            oDoc = oWord.Documents.Add(oMissing, oMissing, oMissing, oMissing)
+
+            'Insert Paragraph Youth Name
+            Dim oPara1 As Word.Paragraph
+            oPara1 = oDoc.Content.Paragraphs.Add(oMissing)
+            Dim fn = _youth.Firstname
+            Dim ln = _youth.Lastname
+            Dim idcard = _youth.IDCard
+            Dim idc = String.Format("{0}-{1}-{2}-{3}-{4}", idcard.Substring(0, 1), idcard.Substring(1, 4), idcard.Substring(5, 5), idcard.Substring(10, 2), idcard.Substring(12, 1))
+            'Dim dob = _youth.DateofBirth
+
+            Dim dob = CDate(_youth.DateofBirth).ToString("dd MMMM yyyy", ci)
+            Dim sex = IIf(_youth.Sex = 1, "ชาย", "หญิง")
+            Dim _mobile = _youth.Mobile
+            Dim mobile = IIf(_mobile = "", "-", String.Format("{0}-{1}-{2}", _mobile.Substring(0, 3), _mobile.Substring(3, 3), _mobile.Substring(5, 4)))
+            Dim nationality = IIf(_youth.Nationality = "", "-", _youth.Nationality)
+            Dim racism = IIf(_youth.Race = "", "-", _youth.Race)
+            Dim r = ""
+            Select Case _youth.ReligionID
+                Case 1
+                    r = "พุทธ"
+                Case 2
+                    r = "คริสต์"
+                Case 3
+                    r = "อิสลาม"
+            End Select
+
+            Dim shirt_size = IIf(_youth.ShirtSize = "", "-", _youth.ShirtSize)
+            Dim shoe_size = IIf(_youth.ShoeSize = "", "-", _youth.ShoeSize)
+            Dim RA_hno = IIf(_youth.RAHno = "", "-", _youth.RAHno)
+            Dim RA_moo = IIf(_youth.RAMoo = "", "-", _youth.RAMoo)
+            Dim RA_soi = IIf(_youth.RASoi = "", "-", _youth.RASoi)
+            Dim RA_road = IIf(_youth.RARoad = "", "-", _youth.RARoad)
+            Dim RA_tumbon = IIf(_youth.RATumbon = "", "-", _youth.RATumbon)
+            Dim RA_aumphor = IIf(_youth.RAAumphor = "", "-", _youth.RAAumphor)
+            Dim RA_province = IIf(_youth.RAProvince = "", "-", _youth.RAProvince)
+            Dim RA_zipcode = IIf(_youth.RAZipcode = "", "-", _youth.RAZipcode)
+            Dim RA_phone = IIf(_youth.RAPhone = "", "-", _youth.RAPhone)
+            Dim CA_hno = IIf(_youth.CAHno = "", "-", _youth.CAHno)
+            Dim CA_moo = IIf(_youth.CAMoo = "", "-", _youth.CAMoo)
+            Dim CA_soi = IIf(_youth.CASoi = "", "-", _youth.CASoi)
+            Dim CA_road = IIf(_youth.CARoad = "", "-", _youth.CARoad)
+            Dim CA_tumbon = IIf(_youth.CATumbon = "", "-", _youth.CATumbon)
+            Dim CA_aumphor = IIf(_youth.CAAumphor = "", "-", _youth.CAAumphor)
+            Dim CA_province = IIf(_youth.CAProvince = "", "-", _youth.CAProvince)
+            Dim CA_zipcode = IIf(_youth.CAZipcode = "", "-", _youth.CAZipcode)
+            Dim CA_phone = IIf(_youth.CAPhone = "", "-", _youth.CAPhone)
+            Dim InfoSection = String.Format("ชื่อ-นามสกุล {1} {2} เลขบัตรประชาชน {3} วัน-เดือน-ปีเกิด {4} เพศ {5}{0}เบอร์มือถือ {6} เชื้อชาติ {7} สัญชาติ {8} ศาสนา {9} ขนาดเสื้อ {10} ขนาดรองเท้า {11}" &
+                                            "{0}ที่อยู่ตามบัตรประชาชน" &
+                                            "{0}บ้านเลขที่ {12} หมู่ที่ {13} ซอย {14} ถนน {15} แขวง/ตำบล {16}" &
+                                            "{0}อำเภอ/เขต {17} จังหวัด {18} รหัสไปรษณีย์ {19} เบอร์โทรศัพท์ที่บ้าน {20}" &
+                                            "{0}ที่อยู่ปัจจุบัน" &
+                                            "{0}บ้านเลขที่ {21} หมู่ที่ {22} ซอย {23} ถนน {24} แขวง/ตำบล {25}" &
+                                            "{0}อำเภอ/เขต {26} จังหวัด {27} รหัสไปรษณีย์ {28} เบอร์โทรศัพท์ที่บ้าน {29}", vbCrLf, fn, ln, idc, dob, sex, mobile, racism, nationality, r, shirt_size, shoe_size, RA_hno, RA_moo, RA_soi, RA_road, RA_tumbon, RA_aumphor, RA_province, RA_zipcode, RA_phone, CA_hno, CA_moo, CA_soi, CA_road, CA_tumbon, CA_aumphor, CA_province, CA_zipcode, CA_phone)
+
+
+
+            oPara1.Range.Text = InfoSection
+            oPara1.Range.InsertParagraphAfter()
+
+            Me.Close()
+
+            ReleasedObject(oDoc)
+            ReleasedObject(oWord)
+
+            If File.Exists(sfd.FileName) Then
+                System.Diagnostics.Process.Start(sfd.FileName)
+            End If
+        End If
+    End Sub
 End Class

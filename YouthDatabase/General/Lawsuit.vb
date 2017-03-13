@@ -149,7 +149,7 @@ Public Class Lawsuit
         Reset()
     End Sub
 
-    Private Sub btSearch_Click(sender As Object, e As EventArgs) Handles btSearch.Click
+    Private Sub btSearch_Click(sender As Object, e As EventArgs)
         Using frm = New SearchCase()
             Dim result = frm.ShowDialog()
             If result = DialogResult.OK Then
@@ -304,7 +304,7 @@ Public Class Lawsuit
         ds = _location.List
 
         If Not ds Is Nothing Then
-            ds.Tables(0).Rows(0).Delete()
+            'ds.Tables(0).Rows(0).Delete()
             cbLocation.DataSource = ds.Tables(0)
             cbLocation.DisplayMember = "name"
             cbLocation.ValueMember = "ID"
@@ -372,6 +372,21 @@ Public Class Lawsuit
                 tbCaseNo.Text = "อย."
         End Select
 
+    End Sub
+
+    Private Sub btSearch_Click_1(sender As Object, e As EventArgs) Handles btSearch.Click
+        Using frm = New SearchCase()
+            Dim result = frm.ShowDialog()
+            If result = DialogResult.OK Then
+                _CaseID = frm.CaseID
+                isSeacrh = True
+                'MessageBox.Show(_CaseID.ToString)
+                GetDetail(_CaseID)
+
+                btInsertTort.Enabled = True
+                btRemoveTort.Enabled = True
+            End If
+        End Using
     End Sub
 
 End Class
